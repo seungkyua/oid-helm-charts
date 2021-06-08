@@ -1,0 +1,8 @@
+
+namespace: istio-system
+dashboards:
+  label: grafana_serivce_mesh_dashbaord
+datasources:
+  enabled: true
+  label: grafana_serivce_mesh_datasource
+  prometheusAddress: "lma-prometheus-fed-master-prometheus:9090"
