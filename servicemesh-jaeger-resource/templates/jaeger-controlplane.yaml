@@ -34,6 +34,10 @@ spec:
         password: {{ .Values.storage.options.es.password }}
         tls.ca: {{ .Values.storage.options.es.tlsCa }}
         server-urls: {{ .Values.storage.options.es.serverUrls }}
+  query:
+    extraEnv:
+    - name: QUERY_BASE_PATH
+      value: {{ .Values.query.basePath }}
   volumeMounts:
   - mountPath: /etc/ssl/certs
     name: es-tls

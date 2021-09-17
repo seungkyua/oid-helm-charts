@@ -6,7 +6,8 @@ name: Publish Helm Chart to HANU Helm Repo
 # events but only for the master branch
 on:
   push:
-    branches: [ main ]
+#    branches: [ main ]
+    branches: [ '*' ]
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -23,7 +24,8 @@ jobs:
       - name: Publish Helm chart
         uses: stefanprodan/helm-gh-pages@master
         with:
-          token: ${{ secrets.HANU }}
+          #token: ${{ secrets.HANU }}
+          token: ${{ secrets.SEUNGKYUA_GIHUB_TOKEN }}
           charts_dir: .
           charts_url:  https://openinfradev.github.io/helm-repo
           owner: openinfradev
